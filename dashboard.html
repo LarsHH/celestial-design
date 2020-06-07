@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link href="dashboard.css" rel="stylesheet">
+    <title>Celestial Dashboard</title>
+    <script src="https://kit.fontawesome.com/78042cd2ca.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Celestial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+        <div class="row">
+
+          <!-- Side bar -->
+          <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+              <ul class="nav flex-column pt-4">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Overview</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Analyze</a>
+                </li>
+              </ul>
+          </nav>
+
+          <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <h1 class="h2">MNIST Wide Search</h1>
+
+            </div>
+
+            <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+            <h2>Collected Results</h2>
+            <div class="table-responsive">
+              <table class="table table-striped table-sm">
+                  <thead>
+                    <tr>
+                      <th>Timestamp</th>
+                      <th>param1</th>
+                      <th>param2</th>
+                      <th>param3</th>
+                      <th>loss</th>
+                      <th>accuracy</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+
+                        <td>2020-04-14 05:03:26.510123</td>
+
+                        <td>0.112136647299427</td>
+
+                        <td>18</td>
+
+                        <td>relu</td>
+
+                        <td>0.8878633527005735</td>
+
+                        <td>0.99</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>2020-04-14 05:03:26.554437</td>
+
+                        <td>0.0956227403252931</td>
+
+                        <td>13</td>
+
+                        <td>relu</td>
+
+                        <td>0.904377259674707</td>
+
+                        <td>0.9650000000000001</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>2020-04-14 05:03:26.592389</td>
+
+                        <td>0.276381261658362</td>
+
+                        <td>15</td>
+
+                        <td>relu</td>
+
+                        <td>0.7236187383416385</td>
+
+                        <td>0.975</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>2020-04-14 05:03:26.630342</td>
+
+                        <td>0.701294309904624</td>
+
+                        <td>13</td>
+
+                        <td>tanh</td>
+
+                        <td>0.29870569009537573</td>
+
+                        <td>0.9650000000000001</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>2020-04-14 05:03:26.674828</td>
+
+                        <td>0.155034998301835</td>
+
+                        <td>11</td>
+
+                        <td>relu</td>
+
+                        <td>0.8449650016981651</td>
+
+                        <td>0.9550000000000001</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>2020-04-14 05:03:26.723637</td>
+
+                        <td>0.706186681284458</td>
+
+                        <td>17</td>
+
+                        <td>tanh</td>
+
+                        <td>0.2938133187155417</td>
+
+                        <td>0.985</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>2020-04-14 05:03:26.760346</td>
+
+                        <td>0.589399141227418</td>
+
+                        <td>18</td>
+
+                        <td>relu</td>
+
+                        <td>0.41060085877258157</td>
+
+                        <td>0.99</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>2020-04-14 05:03:26.802263</td>
+
+                        <td>0.387586283321596</td>
+
+                        <td>18</td>
+
+                        <td>tanh</td>
+
+                        <td>0.6124137166784044</td>
+
+                        <td>0.99</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>2020-04-14 05:03:26.843099</td>
+
+                        <td>0.458088241170167</td>
+
+                        <td>20</td>
+
+                        <td>relu</td>
+
+                        <td>0.5419117588298328</td>
+
+                        <td>1.0</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>2020-04-14 05:03:26.890839</td>
+
+                        <td>0.628940745207961</td>
+
+                        <td>14</td>
+
+                        <td>tanh</td>
+
+                        <td>0.3710592547920395</td>
+
+                        <td>0.97</td>
+
+                    </tr>
+
+                  </tbody>
+              </table>
+            </div>
+          </main>
+        </div>
+      </div>
+      <script src="dashboard.js"></script>
+</body>
+</html>
